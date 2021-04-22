@@ -1,17 +1,17 @@
 button:focus, textarea:focus, select:focus {
 	outline: none;
 }
-.darkmode-background {
+.lightmode-background {
 	background: #fff;
 	color: #212529;
 	transition: background-color .25s ease-in-out;
 }
-.lightmode-background {
+.darkmode-background {
 	background: #1b151f;
 	color: #fff;
 	transition: background-color .25s ease-in-out;
 }
-.darkmode-button {
+.lightmode-button {
 	background: #1b151f;
 	color: white;
 	width: 3rem;
@@ -28,7 +28,7 @@ button:focus, textarea:focus, select:focus {
 	align-items: center;
 	border: none;
 }
-.lightmode-button {
+.darkmode-button {
 	background: white;
 	color: black;
 	width: 3rem;
