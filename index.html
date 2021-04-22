@@ -13,39 +13,53 @@
 	<title>Name History Checker</title><!-- Favicon: -->
 	<link href="./favicon.ico" id="icon" rel="icon" type="image/x-icon">
 	<style>
-	button:focus, textarea:focus, select:focus{
-	       outline: none;
+	   button:focus, textarea:focus, select:focus{
+	          outline: none;
+	      }
+	   .darkmode-background {
+	   background:#fff; 
+	   color: #212529; 
+	   transition: background-color .25s ease-in-out;
 	   }
-	.darkmode-background {
-	background:#fff; 
-	color: #212529; 
-	transition: background-color .25s ease-in-out;
-	}
-	.lightmode-background {
-	background:#1b151f; 
-	color: #fff; 
-	transition: background-color .25s ease-in-out;
-	}
-	.darkmode-button {
-	background: #1b151f;
-	color: white;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	font-size: 21px; 
-	padding-bottom: 2.5px; 
-	border:none;
-	}
-	.lightmode-button {
-	background: white;
-	color: black;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	font-size: 21px; 
-	padding-bottom: 2.5px; 
-	border:none;
-	}
+	   .lightmode-background {
+	   background:#1b151f; 
+	   color: #fff; 
+	   transition: background-color .25s ease-in-out;
+	   }
+	   .darkmode-button {
+	   background: #1b151f;
+	   color: white;
+	   width: 3rem;
+	   height: 3rem;
+	   position: fixed;
+	   border-radius: 50%;
+	   right: 32px;
+	   bottom: 32px;
+	   left: unset;
+	   cursor: pointer;
+	   transition: all 0.5s ease;
+	   display: flex;
+	   justify-content: center;
+	   align-items: center;
+	   border:none;
+	   }
+	   .lightmode-button {
+	   background: white;
+	   color: black;
+	   width: 3rem;
+	   height: 3rem;
+	   position: fixed;
+	   border-radius: 50%;
+	   right: 32px;
+	   bottom: 32px;
+	   left: unset;
+	   cursor: pointer;
+	   transition: all 0.5s ease;
+	   display: flex;
+	   justify-content: center;
+	   align-items: center;
+	   border:none;
+	   }
 	</style>
 </head>
 <body>
@@ -63,29 +77,29 @@
 		<p>Here is the <a href="https://github.com/withdrew/Name-History-Checker" target="_blank">Source code</a>.</p>
 	</center>
 	<script>
-	   let mode;
-	   mode = localStorage.getItem('mode');
-
-	   if (mode === 'light'){
-	      lightMode();
-	   }else{
-	      darkMode();
-	   }
-	   function darkMode() {
-	   document.body.className = "lightmode-background";
-	      document.getElementById("darkmodebtn").className = "lightmode-button";
-	      document.getElementById("darkmodebtn").onclick = lightMode;
-	      localStorage.setItem('mode', 'dark');
+	      let mode;
 	      mode = localStorage.getItem('mode');
-	   }
 
-	   function lightMode() {
-	   document.body.className = "darkmode-background";
-	      document.getElementById("darkmodebtn").className = "darkmode-button";
-	      document.getElementById("darkmodebtn").onclick = darkMode;
-	      localStorage.setItem('mode', 'light');
-	      mode = localStorage.getItem('mode');
-	   }
+	      if (mode === 'light'){
+	         lightMode();
+	      }else{
+	         darkMode();
+	      }
+	      function darkMode() {
+	      document.body.className = "lightmode-background";
+	         document.getElementById("darkmodebtn").className = "lightmode-button";
+	         document.getElementById("darkmodebtn").onclick = lightMode;
+	         localStorage.setItem('mode', 'dark');
+	         mode = localStorage.getItem('mode');
+	      }
+
+	      function lightMode() {
+	      document.body.className = "darkmode-background";
+	         document.getElementById("darkmodebtn").className = "darkmode-button";
+	         document.getElementById("darkmodebtn").onclick = darkMode;
+	         localStorage.setItem('mode', 'light');
+	         mode = localStorage.getItem('mode');
+	      }
 	</script>
 </body>
 </html>
