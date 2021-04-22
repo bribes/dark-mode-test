@@ -10,57 +10,9 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" rel="stylesheet">
 	<link href="./style.css" rel="stylesheet">
+	<link href="./darkmode.css" rel="stylesheet">
 	<title>Name History Checker</title><!-- Favicon: -->
 	<link href="./favicon.ico" id="icon" rel="icon" type="image/x-icon">
-	<style>
-	   button:focus, textarea:focus, select:focus{
-	          outline: none;
-	      }
-	   .darkmode-background {
-	   background:#fff; 
-	   color: #212529; 
-	   transition: background-color .25s ease-in-out;
-	   }
-	   .lightmode-background {
-	   background:#1b151f; 
-	   color: #fff; 
-	   transition: background-color .25s ease-in-out;
-	   }
-	   .darkmode-button {
-	   background: #1b151f;
-	   color: white;
-	   width: 3rem;
-	   height: 3rem;
-	   position: fixed;
-	   border-radius: 50%;
-	   right: 32px;
-	   bottom: 32px;
-	   left: unset;
-	   cursor: pointer;
-	   transition: all 0.5s ease;
-	   display: flex;
-	   justify-content: center;
-	   align-items: center;
-	   border:none;
-	   }
-	   .lightmode-button {
-	   background: white;
-	   color: black;
-	   width: 3rem;
-	   height: 3rem;
-	   position: fixed;
-	   border-radius: 50%;
-	   right: 32px;
-	   bottom: 32px;
-	   left: unset;
-	   cursor: pointer;
-	   transition: all 0.5s ease;
-	   display: flex;
-	   justify-content: center;
-	   align-items: center;
-	   border:none;
-	   }
-	</style>
 </head>
 <body>
 	<button class="lightmode-button" id="darkmodebtn" onclick="darkMode()">🌓</button>
