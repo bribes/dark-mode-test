@@ -17,7 +17,7 @@
 	      function darkMode() {
 	      document.body.className = "darkmode-background";
 	         document.getElementById("darkmodebtn").className = "darkmode-button";
-		 ocument.getElementById("darkmodebtn").onclick = lightMode;
+		 document.getElementById("darkmodebtn").onclick = lightMode;
 	         localStorage.setItem('mode', 'dark');
 	         mode = localStorage.getItem('mode');
 	      }
