@@ -1,40 +1,91 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <!-- Scripts: -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-      <script async="true" src="./checker.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
- function addDarkmodeWidget() {
-    new Darkmode().showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget)
-</script>
-      <!-- CSS: -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css">
-      <link rel="stylesheet" href="./style.css">
-      <title>Name History Checker</title>
-      <!-- Favicon: -->
-      <link id="icon" rel="icon" href="./favicon.ico" type="image/x-icon" />
-   </head>
-   <body>
-      <center>
-         <!-- Title: -->
-         <h1 class="thin">Name History Checker</h1>
-         <!-- Form: -->
-         <form class="pure-form" action="?" method="get">
-            <input class="darkmode-ignore" name="username" id="username" placeholder="Username" type="text" autofocus> 
-            <input type="submit" class="pure-button-primary pure-button br4" value="Check">
-         </form>
-         <br>
-         <!-- Name History: -->
-         <table>
-            <tbody id="myTable"></tbody>
-         </table>
-         <!-- Source Code Redirect: -->
-         <p>Here is the <a target="_blank" href="https://github.com/withdrew/Name-History-Checker">Source code</a>.</p>
-      </center>
-   </body>
+<head>
+	<!-- Scripts: -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+	</script>
+	<script async="true" src="./checker.js">
+	</script><!-- CSS: -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" rel="stylesheet">
+	<link href="./style.css" rel="stylesheet">
+	<title>Name History Checker</title><!-- Favicon: -->
+	<link href="./favicon.ico" id="icon" rel="icon" type="image/x-icon">
+	<style>
+	button:focus, textarea:focus, select:focus{
+	       outline: none;
+	   }
+	.darkmode-background {
+	background:#fff; 
+	color: #212529; 
+	transition: background-color .25s ease-in-out;
+	}
+	.lightmode-background {
+	background:#1b151f; 
+	color: #fff; 
+	transition: background-color .25s ease-in-out;
+	}
+	.darkmode-button {
+	background: #1b151f;
+	color: white;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 21px; 
+	padding-bottom: 2.5px; 
+	border:none;
+	}
+	.lightmode-button {
+	background: white;
+	color: black;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 21px; 
+	padding-bottom: 2.5px; 
+	border:none;
+	}
+	</style>
+</head>
+<body>
+	<button class="lightmode-button" id="darkmodebtn" onclick="darkMode()">🌓</button>
+	<center>
+		<!-- Title: -->
+		<h1 class="thin">Name History Checker</h1><!-- Form: -->
+		<form action="?" class="pure-form" method="get">
+			<input autofocus="" id="username" name="username" placeholder="Username" type="text"> <input class="pure-button-primary pure-button br4" type="submit" value="Check">
+		</form><br>
+		<!-- Name History: -->
+		<table>
+			<tbody id="myTable"></tbody>
+		</table><!-- Source Code Redirect: -->
+		<p>Here is the <a href="https://github.com/withdrew/Name-History-Checker" target="_blank">Source code</a>.</p>
+	</center>
+	<script>
+	   let mode;
+	   mode = localStorage.getItem('mode');
+
+	   if (mode === 'light'){
+	      lightMode();
+	   }else{
+	      darkMode();
+	   }
+	   function darkMode() {
+	   document.body.className = "lightmode-background";
+	      document.getElementById("darkmodebtn").className = "lightmode-button";
+	      document.getElementById("darkmodebtn").onclick = lightMode;
+	      localStorage.setItem('mode', 'dark');
+	      mode = localStorage.getItem('mode');
+	   }
+
+	   function lightMode() {
+	   document.body.className = "darkmode-background";
+	      document.getElementById("darkmodebtn").className = "darkmode-button";
+	      document.getElementById("darkmodebtn").onclick = darkMode;
+	      localStorage.setItem('mode', 'light');
+	      mode = localStorage.getItem('mode');
+	   }
+	</script>
+</body>
 </html>
